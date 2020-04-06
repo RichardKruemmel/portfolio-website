@@ -9,8 +9,8 @@
         <title>Tic Tac Toe</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-        <script defer src="theme.js"></script>
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+        <script defer src="{{ url_for('static',filename='styles/theme.js') }}"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -267,6 +267,6 @@
                 </tbody>
             </table>
         
-        <script src="app.js" async defer></script>
+        <script src="{{ url_for('static',filename='styles/app.js') }}" async defer></script>
     </body>
 </html>
