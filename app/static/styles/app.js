@@ -1,80 +1,33 @@
-console.log("Script loaded")
+// Select DOM Items
+const menuBtn = document.querySelector('.menu-btn');
+const menu = document.querySelector('.menu');
+const menuNav = document.querySelector('.menu-nav');
+const menuBranding = document.querySelector('.menu-branding');
+const navItems = document.querySelectorAll('.nav-item');
 
-document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', fillbox));
+// Set Initial State Of Menu
+let showMenu = false;
 
-var turn = 0;
-var Xplayer = [];
-var Oplayer = [];
+menuBtn.addEventListener('click', toggleMenu);
 
-var winCondition = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6]
-]
+function toggleMenu() {
+  if (!showMenu) {
+    menuBtn.classList.add('close');
+    menu.classList.add('show');
+    menuNav.classList.add('show');
+    menuBranding.classList.add('show');
+    navItems.forEach(item => item.classList.add('show'));
 
-function fillbox(cell){
-    if (turn % 2 == 0){
-        this.innerHTML = "X";
-        turn = turn + 1;
-        var clickedCell = cell.target;
-        Xplayer.push(parseInt(clickedCell.getAttribute('index')));
-        Xplayer.sort(function(a, b) { return a - b })
-        checkWinner(Xplayer);
-        this.removeEventListener("click", fillbox);
-        
+    // Set Menu State
+    showMenu = true;
+  } else {
+    menuBtn.classList.remove('close');
+    menu.classList.remove('show');
+    menuNav.classList.remove('show');
+    menuBranding.classList.remove('show');
+    navItems.forEach(item => item.classList.remove('show'));
 
-    }
-    else {
-        this.innerHTML = "O";
-        turn = turn + 1;
-        var clickedCell = cell.target;
-        Oplayer.push(parseInt(clickedCell.getAttribute('index')));
-        Oplayer.sort(function(a, b) { return a - b })
-        checkWinner(Oplayer);
-        this.removeEventListener("click", fillbox)
-    }
-};
-function checkWinner(player){
-    
-    if (turn >= 5) {
-        
-        for (i = 0; i < winCondition.length; i++) {
-            var sets = winCondition[i];  // winning hand
-            var setFound = true;
-
-            for (r = 0; r < sets.length; r++) {
-                var found = false;
-                
-                for (s = 0; s < player.length; s++) {
-                    if (sets[r] == player[s]) {
-                        found = true;
-                    }
-                }
-
-                if (found == false) {
-                    setFound = false;
-                    break;
-                    }
-            }
-            if (setFound == true) {
-                        if (turn % 2 == 0){
-                            alert("Player O has won.");
-                            location.reload();
-                        } else {
-                            alert("Player X has won.");
-                            location.reload();
-                        }
-                        break;
-            }
-    }
-    if(turn == 9 && setFound == false){
-        alert("It's a draw!");
-        location.reload();
-        }
-    }
-};
+    // Set Menu State
+    showMenu = false;
+  }
+}
