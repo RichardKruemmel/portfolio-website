@@ -46,14 +46,14 @@
 	.menu-nav {
 	  margin: 0;
 	  padding: 0;
-	  background: #373737;
+	  background: #707070;
 	  list-style: none;
 	  transform: translate3d(0, -100%, 0);
 	  transition: all 0.5s ease-out; }
 	  .menu-nav.show {
 		transform: translate3d(0, 0, 0); }
 	.menu-branding {
-	  background: #444;
+	  background: rgb(237, 237, 237);
 	  transform: translate3d(0, 100%, 0);
 	  transition: all 0.5s ease-out; }
 	  .menu-branding.show {
@@ -104,8 +104,7 @@
   
   body {
 	background: #444;
-	color: #fff;
-	height: 100%;
+	color: #707070;
 	margin: 0;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	line-height: 1.5; }
@@ -121,14 +120,13 @@
 		width: 100%;
 		height: 100%;
 		z-index: -1;
-		background: rgba(68, 68, 68, 0.9); }
+		background: rgba(237, 237, 237, 0.8); }
   
 	h2.sm-heading {
 	  margin-bottom: 2rem;
 	  padding: 0.2rem 1rem;
 	  display: block;
-
-      animation: fadeInFromNone 8s ease-out;
+      animation: fadeInFromNone 5.5s ease-out;
 	}
   
   a {
@@ -140,20 +138,20 @@
 	z-index: 2;
 	width: 100%; }
   
-  main {
+  section {
 	padding: 4rem;
 	min-height: calc(100vh - 60px); }
-	main .icons {
+	section .icons {
 	  margin-top: 1rem; }
-	  main .icons a {
+	  section .icons a {
 		padding: 0.4rem; }
-		main .icons a:hover {
+		section .icons a:hover {
 		  color: var(--theme-color);
 		  transition: all 0.5s ease-out; }
-	main#home {
+	section#home {
 	  overflow: hidden; }
-	  main#home h1 {
-		margin-top: 20vh; }
+
+
   
   .btn, .btn-dark, .btn-light {
 	display: block;
@@ -181,7 +179,7 @@
 
 #logo {
 	fill: transparent;
-	animation: fill 1s ease forwards 5.5s;
+	animation: fill 1s ease forwards 4.5s;
  	height: 40px;
  	left: 0; 
 	top: 0;
@@ -206,85 +204,85 @@
 .st0:nth-child(1) {
 	stroke-dasharray: 306;
 	stroke-dashoffset: 306;
-	animation: line-anim 2s ease forwards;
+	animation: line-anim 1.5s ease forwards;
 }
 
 #logo path:nth-child(2) {
 	stroke-dasharray: 113.8;
 	stroke-dashoffset: 113.8;
-	animation: line-anim 2s ease forwards 0.3s;
+	animation: line-anim 1.5s ease forwards 0.25s;
 }
 
 #logo path:nth-child(3) {
 	stroke-dasharray: 187.7;
 	stroke-dashoffset: 187.7;
-	animation: line-anim 2s ease forwards 0.6s;
+	animation: line-anim 1.5s ease forwards 0.5s;
 }
 
 #logo path:nth-child(4) {
 	stroke-dasharray: 226;
 	stroke-dashoffset: 226;
-	animation: line-anim 2s ease forwards 0.9s;
+	animation: line-anim 1.5s ease forwards 0.75s;
 }
 
 #logo path:nth-child(5) {
 	stroke-dasharray: 240.1;
 	stroke-dashoffset: 240.1;
-	animation: line-anim 2s ease forwards 1.2s;
+	animation: line-anim 1.5s ease forwards 1s;
 }
 
 #logo path:nth-child(6) {
 	stroke-dasharray: 120.9;
 	stroke-dashoffset: 120.9;
-	animation: line-anim 2s ease forwards 1.5s;
+	animation: line-anim 1.5s ease forwards 1.25s;
 }
 
 #logo path:nth-child(7) {
 	stroke-dasharray: 256.2;
 	stroke-dashoffset: 256.2;
-	animation: line-anim 2s ease forwards 1.8s;
+	animation: line-anim 1.5s ease forwards 1.5s;
 }
 
 #logo path:nth-child(8) {
 	stroke-dasharray: 274.4;
 	stroke-dashoffset: 274.4;
-	animation: line-anim 2s ease forwards 2.1s;
+	animation: line-anim 1.5s ease forwards 1.75s;
 }
 
 #logo path:nth-child(9) {
 	stroke-dasharray: 121;
 	stroke-dashoffset: 121;
-	animation: line-anim 2s ease forwards 2.4s;
+	animation: line-anim 1.5s ease forwards 2s;
 }
 
 #logo path:nth-child(10) {
 	stroke-dasharray: 254.1;
 	stroke-dashoffset: 254.1;
-	animation: line-anim 2s ease forwards 2.7s;
+	animation: line-anim 1.5s ease forwards 2.25s;
 }
 
 #logo path:nth-child(11) {
 	stroke-dasharray: 304.5;
 	stroke-dashoffset: 304.5;
-	animation: line-anim 2s ease forwards 3s;
+	animation: line-anim 1.5s ease forwards 2.5s;
 }
 
 #logo path:nth-child(12) {
 	stroke-dasharray: 304.5;
 	stroke-dashoffset: 304.5;
-	animation: line-anim 2s ease forwards 3.3s;
+	animation: line-anim 1.5s ease forwards 2.75s;
 }
 
 #logo path:nth-child(13) {
 	stroke-dasharray: 232.7;
 	stroke-dashoffset: 232.7;
-	animation: line-anim 2s ease forwards 3.6s;
+	animation: line-anim 1.5s ease forwards 3s;
 }
 
 #logo path:nth-child(14) {
 	stroke-dasharray: 115;
 	stroke-dashoffset: 115;
-	animation: line-anim 2s ease forwards 3.9s;
+	animation: line-anim 1.5s ease forwards 3.25s;
 }
 
 @keyframes line-anim {
