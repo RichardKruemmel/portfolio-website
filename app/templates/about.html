@@ -1,7 +1,45 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Hi, {{ user.nickname }}!</h1>
-    {% for post in posts %}
-    <div><p>{{ post.author.nickname }} says: <b>{{ post.body }}</b></p></div>
-    {% endfor %}
+<div class="about">
+    <h1>ABOUT</h1>
+    <hr>
+<div class="icon-section">
+    <section>
+        <div class="neumorphic variation1">
+                <span><i class="fas fa-rocket"></i></span>
+        </div>
+        <div><h3>Dynamic</h3></div>
+    </section>
+    <section>
+            <div class="neumorphic variation1">
+                    <span><i class="fas fa-mobile-alt"></i></span>
+            </div>
+            <div><h3>Responsive</h3></div>
+        </section>
+    <section>
+        <div class="neumorphic variation1">
+                <span><i class="fas fa-lightbulb"></i></span>
+        </div>
+        <div><h3>Intuitive</h3></div>
+    </section>
+    <section>
+            <div class="neumorphic variation1">
+                    <span><i class="fas fa-stopwatch"></i></span>
+            </div>
+            <div><h3>Fast</h3></div>
+    </section>
+</div>
+<div class="intro-section">
+    <div class="intro neumorphic"><div class="portrait"></div><div><h3>Who is this guy?</h3><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</span></div></div>
+    <div class="skills">
+        <div class="layerone">80%<div class="layertwo"><div class="layerthree">Python</div></div></div>
+        <div class="layerone"><div class="layertwo"><div class="layerthree"></div></div></div>
+        <div class="layerone"><div class="layertwo"><div class="layerthree"></div></div></div>
+        <div class="layerone"><div class="layertwo"><div class="layerthree"></div></div></div>
+        <div class="layerone"><div class="layertwo"><div class="layerthree"></div></div></div>
+        <div class="layerone"><div class="layertwo"><div class="layerthree"></div></div></div>
+        <div class="layerone"><div class="layertwo"><div class="layerthree"></div></div></div>
+    </div>
+</div>
+</div>
 {% endblock %}

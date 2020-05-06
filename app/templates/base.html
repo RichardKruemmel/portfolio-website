@@ -5,11 +5,45 @@
             <title>{{ title }}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- <script src="https://kit.fontawesome.com/64d27ec2a6.js" crossorigin="anonymous"></script> -->
+        <script src="https://kit.fontawesome.com/64d27ec2a6.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="{{ url_for('static',filename='/styles/style.css') }}">
         
     </head>
     <body>
+            <header>
+                    <div class="menu-btn">
+                      <div class="btn-line"></div>
+                      <div class="btn-line"></div>
+                      <div class="btn-line"></div> 
+                    </div>
+                    <nav class="menu">
+                      <div class="menu-branding">
+                        <div class="portrait"></div>
+                      </div>
+                      <ul class="menu-nav">
+                        <li class="nav-item">
+                          <a href="/" class="nav-link">
+                          Home
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="{{ url_for('about') }}" class="nav-link">
+                          About
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="/projects.html" class="nav-link">
+                          Projects
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="/contact.html" class="nav-link">
+                          Contact
+                          </a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </header>
             {% with messages = get_flashed_messages() %}
             {% if messages %}
             <ul>
