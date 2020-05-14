@@ -1,0 +1,2 @@
+My Personal Portfolio-Website
+    This project is part of my foundation project. I have used Flask and SQLAlchemy for it. The database is only for my personal login and it's purpose is to edit projects and skills directly inside the website without changing the code. I am currently hosting it via GCP on www.richard-kruemmel.de
