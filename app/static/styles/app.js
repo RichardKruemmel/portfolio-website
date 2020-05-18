@@ -31,3 +31,8 @@ function toggleMenu() {
     showMenu = false;
   }
 }
+
+function Openform(){
+  document.querySelector('#form1').style.display = 'block';
+}
+
