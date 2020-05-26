@@ -1,10 +1,14 @@
-from flask import render_template, flash, redirect, url_for, session
+from flask import render_template, flash, redirect, request, url_for, session
 from app import app, db
-from app.forms import LoginForm, AddingSkillForm
+from app.forms import LoginForm, AddingSkillForm, ContactForm
 from flask_login import current_user, login_user
 from app.models import User, Skills
 from flask_login import logout_user
 from flask_login import login_required
+from flask_mail import Message, Mail
+
+mail = Mail()
+mail.init_app(app)
 
 @app.route('/')
 @app.route('/index')
@@ -41,4 +45,24 @@ def about():
         db.session.add(skills)
         db.session.commit()
         return redirect(url_for('index'))   
-    return render_template('about.html', form=form, skills=skills)
+    return render_template('about.html', title="About", form=form, skills=skills)
+
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():
+    form = ContactForm()
+    if request.method == 'POST':
+        if form.validate() == False:
+            flash('All fields are required.')
+            return render_template('contact.html', form=form)
+        else:
+            msg = Message(form.subject.data, sender='contact@example.com', recipients=app.config['ADMINS'][0].split())
+            msg.body = """
+            From: %s &lt;%s&gt;
+            %s
+            """ % (form.name.data, form.email.data, form.message.data)
+            mail.send(msg)
+ 
+            return render_template('contact.html', success=True)
+ 
+    elif request.method == 'GET':
+        return render_template('contact.html', form=form)

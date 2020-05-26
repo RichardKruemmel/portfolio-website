@@ -32,12 +32,7 @@
                           </a>
                         </li>
                         <li class="nav-item">
-                          <a href="/projects.html" class="nav-link">
-                          Projects
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="/contact.html" class="nav-link">
+                          <a href="{{ url_for('contact') }}" class="nav-link">
                           Contact
                           </a>
                         </li>
@@ -53,11 +48,7 @@
             </ul>
             {% endif %}
             {% endwith %}
-            Microblog:
-        <a href="{{ url_for('index') }}">Home</a>
-        {% if current_user.is_anonymous %}
-        <a href="{{ url_for('login') }}">Login</a>
-        {% else %}
+        {% if not current_user.is_anonymous %}
         <a href="{{ url_for('logout') }}">Logout</a>
         {% endif %}
         {% block content %}{% endblock %}
