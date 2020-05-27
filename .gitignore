@@ -1,7 +1,0 @@
-
-#Ignore Databases
-*.db
-
-
-#Ignore config file
-*config.py
